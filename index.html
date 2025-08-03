@@ -25,6 +25,8 @@
       font-family: 'Georgia', serif;
       line-height: 1.8;
       padding: 0 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     header {
@@ -45,6 +47,7 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
     main {
@@ -75,13 +78,18 @@
       text-align: justify;
     }
 
+    /* Responsividade para tablets e celulares maiores */
     @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
       }
 
+      header p {
+        font-size: 1rem;
+      }
+
       section {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1.5rem;
       }
 
       section h2 {
@@ -93,26 +101,46 @@
       }
     }
 
+    /* Responsividade para celulares pequenos */
     @media (max-width: 480px) {
+      body {
+        padding: 0 0.5rem;
+      }
+
       header {
-        padding-top: 2rem;
+        padding: 2rem 0.5rem 1rem;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
       }
 
       header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        max-width: 100%;
+        padding: 0 0.5rem;
+      }
+
+      main {
+        padding-bottom: 2rem;
       }
 
       section {
-        margin: 2rem 0;
-        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+        padding: 1.2rem 1rem;
+        border-left-width: 4px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px var(--sombra);
       }
 
       section h2 {
         font-size: 1.4rem;
+        margin-bottom: 0.8rem;
       }
 
       section p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
       }
     }
   </style>
@@ -125,9 +153,8 @@
 
   <main>
     <section>
-      <h2></h2>
       <p>
-        Em um canto que embala o peso da dor, *Canção para Ninar Menino Grande* não conta apenas a história de um sujeito. Ela desenha as linhas de uma masculinidade herdeira de silêncios, ausências e feridas. Neste livro, Conceição Evaristo não apenas narra: ela desvela. O homem que ali se apresenta — Fio Jasmim — não é apenas um personagem. Ele é um retrato coletivo, uma condensação de um modo de ser construído historicamente sob o peso da raça, da classe e do gênero. A autora escreve como quem costura as fibras partidas de um tecido masculino em frangalhos, mas também denuncia como ele rasga os outros corpos ao seu redor.
+        Em um canto que embala o peso da dor, <em>Canção para Ninar Menino Grande</em> não conta apenas a história de um sujeito. Ela desenha as linhas de uma masculinidade herdeira de silêncios, ausências e feridas. Neste livro, Conceição Evaristo não apenas narra: ela desvela. O homem que ali se apresenta — Fio Jasmim — não é apenas um personagem. Ele é um retrato coletivo, uma condensação de um modo de ser construído historicamente sob o peso da raça, da classe e do gênero. A autora escreve como quem costura as fibras partidas de um tecido masculino em frangalhos, mas também denuncia como ele rasga os outros corpos ao seu redor.
       </p>
       <p>
         A masculinidade neste livro não é virilidade triunfante. É um homem cansado, fugidio, tomado por sombras de uma vida incompleta. Sua figura se forma no atrito entre a expectativa social e a precariedade existencial. Fio Jasmim não tem um lugar estável no mundo, e isso não o torna mais humano — o torna mais cruel. Porque essa masculinidade, fraturada, retorna ao mundo como ausência, como dor, como abandono. O homem, aqui, não é o que protege: é o que some. Não é o que ama: é o que marca. Não é o que fala: é o que se cala até estourar.
