@@ -3,140 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Masculinidade em Canção para Ninar Menino Grande</title>
+  <title>Canção para Ninar Menino Grande</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    :root {
+      --fundo: #121212;
+      --texto: #f2f2f2;
+      --destaque: #d68c45;
+      --fundo-card: #1e1e1e;
+      --sombra: rgba(0, 0, 0, 0.5);
+    }
 
-    /* Paleta e atmosfera inspiradas na obra e no tema */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0; 
-      background: linear-gradient(120deg, #1c1c1c 40%, #3a2e2e 100%);
-      color: #ddd;
-      font-family: 'Merriweather', serif;
-      line-height: 1.9;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 5rem;
+      background-color: var(--fundo);
+      color: var(--texto);
+      font-family: 'Georgia', serif;
+      line-height: 1.8;
+      padding: 0 1rem;
     }
 
-    h1, h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-      color: #e2b87c;
-      user-select: none;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      margin-top: 2rem;
+    header {
       text-align: center;
+      padding: 4rem 1rem 2rem;
+      background-color: var(--fundo);
     }
-    h2 {
-      font-size: 1.9rem;
-      margin-top: 3rem;
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--destaque);
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-style: italic;
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     main {
       max-width: 860px;
-      background: rgba(25, 18, 18, 0.85);
-      padding: 3rem 3.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 40px 3px rgba(255, 175, 50, 0.3);
-      overflow-wrap: break-word;
+      margin: 0 auto;
+      padding-bottom: 4rem;
     }
 
-    p {
-      font-size: 1.15rem;
-      margin-bottom: 1.6rem;
-      text-align: justify;
-      text-indent: 2.4rem;
-      letter-spacing: 0.007em;
-      color: #ddd;
-    }
-
-    /* Destaque sutil nas primeiras palavras */
-    p strong {
-      color: #f5d498;
-    }
-
-    /* Barra fina vertical amarela para lembrar tensão */
     section {
-      border-left: 4px solid #e2b87c;
-      padding-left: 1.8rem;
-      margin-bottom: 2.8rem;
+      background-color: var(--fundo-card);
+      border-left: 6px solid var(--destaque);
+      padding: 2rem 2rem;
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px var(--sombra);
     }
 
-    /* Rodapé */
-    footer {
-      margin-top: 2rem;
-      color: #7a6e61;
-      font-size: 0.9rem;
-      font-style: italic;
-      user-select: none;
+    section h2 {
+      font-size: 2rem;
+      color: var(--destaque);
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
 
-    /* Um efeito sutil ao passar no título para reforçar fragilidade e tensão */
-    h1:hover, h2:hover {
-      color: #f8c06f;
-      cursor: default;
-      transition: color 0.25s ease;
-      text-shadow: 0 0 8px #f8c06f88;
+    section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding-top: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      section {
+        margin: 2rem 0;
+        padding: 1.5rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.4rem;
+      }
+
+      section p {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <h1>Fio Jasmim e a Masculinidade Quebrada</h1>
+  <header>
+    <h1>Canção para Ninar Menino Grande</h1>
+    <p>Conceição Evaristo escreve não apenas sobre um homem. Ela escreve sobre o que ele representa.</p>
+  </header>
 
   <main>
-
     <section>
-      <p><strong>Canção para Ninar Menino Grande</strong> é um livro curto, mas carregado de um peso imenso. Publicado por Conceição Evaristo, a obra não fala simplesmente de um homem, mas nos apresenta, através da voz de mulheres que o amaram, uma representação da masculinidade que se constrói em fraturas, em ausências e silêncios.</p>
-      <p>O protagonista, Fio Jasmim, não é um herói tradicional. Ele é um espelho onde se refletem as tensões de uma masculinidade que exige força e potência, mas que raramente pode sustentar a vulnerabilidade, o afeto e o cuidado. Sua figura é símbolo de um modelo social que aprisiona homens em papéis rígidos, numa máscara que desmorona diante do silêncio e da fragilidade.</p>
-      <p>Este site é um convite para adentrar essa representação — para entender a masculinidade que o livro retrata, não só em palavras, mas em sensações, em atmosferas, em pensamentos longos e imersivos.</p>
+      <h2></h2>
+      <p>
+        Em um canto que embala o peso da dor, *Canção para Ninar Menino Grande* não conta apenas a história de um sujeito. Ela desenha as linhas de uma masculinidade herdeira de silêncios, ausências e feridas. Neste livro, Conceição Evaristo não apenas narra: ela desvela. O homem que ali se apresenta — Fio Jasmim — não é apenas um personagem. Ele é um retrato coletivo, uma condensação de um modo de ser construído historicamente sob o peso da raça, da classe e do gênero. A autora escreve como quem costura as fibras partidas de um tecido masculino em frangalhos, mas também denuncia como ele rasga os outros corpos ao seu redor.
+      </p>
+      <p>
+        A masculinidade neste livro não é virilidade triunfante. É um homem cansado, fugidio, tomado por sombras de uma vida incompleta. Sua figura se forma no atrito entre a expectativa social e a precariedade existencial. Fio Jasmim não tem um lugar estável no mundo, e isso não o torna mais humano — o torna mais cruel. Porque essa masculinidade, fraturada, retorna ao mundo como ausência, como dor, como abandono. O homem, aqui, não é o que protege: é o que some. Não é o que ama: é o que marca. Não é o que fala: é o que se cala até estourar.
+      </p>
+      <p>
+        Conceição nos entrega uma masculinidade que, ao mesmo tempo que é ferida, fere. E isso não é contradição: é o próprio modo como a masculinidade opera. A figura do homem negro é atravessada por marginalização, desemprego, violência policial, racismo estrutural. Mas, quando se recolhe, não se recolhe apenas em silêncio — se recolhe deixando ruínas. A ausência masculina neste romance não é neutra: ela devasta. Mulheres são deixadas, crianças são esquecidas, histórias são repetidas. Porque esse homem, impossibilitado de se narrar, se destrói e destrói tudo que o cerca.
+      </p>
+      <p>
+        A linguagem de Conceição é poética, mas não esconde. Pelo contrário: expõe com beleza aquilo que a sociedade tende a esconder com vergonha. O afeto masculino? Travado. A responsabilidade? Esquiva. O corpo? Fugidio. A masculinidade, nesse livro, é um peso. Um fardo que o homem tenta carregar com passos largos e arrogantes, mas que se revela um tropeço constante. Fio Jasmim não tem raízes. Ele se recusa à fixidez, não como liberdade, mas como fuga. Não permanece, não constrói, não responde. Sua masculinidade é o movimento que evita ser visto profundamente — e, justamente por isso, machuca.
+      </p>
+      <p>
+        As mulheres, como contraponto, não aparecem apenas como vítimas. São testemunhas da dor e da repetição. São corpos que tentam amar, mas que também sabem. Sabem que ele vai embora. Que ele não sabe permanecer. E isso é o mais cortante do livro: o reconhecimento antecipado da ausência. Elas já sabem que esse homem não vai ficar. E, mesmo assim, cantam. Cantam uma canção de ninar para um menino grande, não porque ele precise dormir, mas porque talvez assim ele se acalme. Talvez pare. Talvez ouça. Talvez entenda. Mas não entende. E o ciclo recomeça.
+      </p>
+      <p>
+        A representação da masculinidade aqui não é só um tema: é um gesto político. É um modo de dizer que o homem não é isento da responsabilidade por sua dor. Que ser negro e pobre não o absolve de sua violência íntima. Que a masculinidade — mesmo a marginalizada — é construída, sustentada e transmitida. Conceição propõe uma reflexão dolorosa: até que ponto a opressão vivida pelo homem negro o torna cego à opressão que ele mesmo perpetua dentro de casa? Até que ponto a masculinidade é uma prisão compartilhada por todos os corpos que convivem com esse homem?
+      </p>
+      <p>
+        Ao final, resta uma pergunta incômoda: é possível salvar esse homem? É possível ninar esse menino grande, fazê-lo adormecer na dor para que renasça em outro gesto? O livro não responde. Mas nos deixa um convite: escutar. Escutar o silêncio que vem da ausência, o choro que vem das mães, o eco que vem dos filhos. Escutar a canção — mesmo que seja de despedida.
+      </p>
     </section>
-
-    <section>
-      <p>A masculinidade em <em>Canção para Ninar Menino Grande</em> se revela como uma construção permeada pelo medo, pelo abandono e pela repetição de gestos que tentam ocultar uma fragilidade profunda. Fio Jasmim é apresentado como alguém que aprende a existir dentro de uma narrativa social que valoriza a dureza, o silêncio e a ausência de afeto, sobretudo no contexto da negritude brasileira. Ele se torna, por consequência, um personagem marcado pela desconexão afetiva — um “menino grande” que nunca recebeu o ninar, o cuidado e a acolhida que poderiam humanizá-lo para além da expectativa da virilidade.</p>
-      <p>Essa masculinidade, longe de ser natural, é um papel social imposto que gera danos tanto para quem o representa quanto para quem se relaciona com ele. O livro expõe as contradições entre o que se espera de um homem — forte, viril, controlador — e o que ele realmente é — um ser humano com necessidades emocionais que não pode manifestar sem ser condenado.</p>
-      <p>Assim, o “menino grande” não é um mero indivíduo, mas um arquétipo da masculinidade negra fragilizada, invisibilizada e silenciada.</p>
-    </section>
-
-    <section>
-      <p>Não se trata apenas da história de Fio, mas do efeito da masculinidade que ele encarna: a masculinidade como agente de dor e ausência. Sua fragilidade não é vista nem acolhida; seu silêncio não é questionado; sua solidão não tem nome. A masculinidade do livro é uma construção em ruínas — que ao mesmo tempo protege e condena, protege ao negar o afeto e condena ao afastar quem poderia lhe oferecer esse mesmo afeto.</p>
-      <p>É uma masculinidade que se sustenta pelo abandono, como se a única forma de existir fosse apagando partes de si, silenciando sentimentos e fugindo do cuidado. Isso torna impossível que Fio se torne um homem pleno — ele permanece suspenso, um menino grande que tenta ser adulto.</p>
-      <p>Essa tensão é o cerne da obra e o que Evaristo expõe com delicadeza brutal: a masculinidade tradicional é uma prisão que aprisiona e fere, e sua repetição perpetua ciclos de dor.</p>
-    </section>
-
-    <section>
-      <p>A presença constante das mulheres, que narram e refletem sobre Fio, representa a resistência àquela masculinidade. São elas que dão voz à dor, à memória e à superação. Através dessas vozes, a masculinidade perde seu protagonismo único e absoluto — ela é vista de fora, sob o olhar daqueles que sofrem sua consequência, aqueles que experimentam suas lacunas e silenciam suas ausências.</p>
-      <p>Essa inversão de perspectiva mostra que a masculinidade é relacional, construída nas interações sociais e afetivas, e que sua análise só é possível quando se escuta a alteridade, especialmente a feminina, tão historicamente silenciada.</p>
-      <p>Não há aqui glorificação nem condenação simples, mas um convite para entender a masculinidade em sua complexidade dolorosa e necessária.</p>
-    </section>
-
-    <section>
-      <p>Além do mais, o peso da negritude no personagem Fio é fundamental para compreender a masculinidade retratada. Ele vive sob o olhar de uma sociedade racista que exige dele uma masculinidade violenta, impenetrável, quase invencível. Essa imposição racializada agrava a impossibilidade do afeto e da fragilidade, tornando sua jornada ainda mais solitária e sofrida.</p>
-      <p>A masculinidade do homem negro, nessa obra, é vista como um campo onde se cruzam opressões de raça, gênero e classe, fazendo dela uma construção ainda mais frágil e complexa. É uma masculinidade que sofre dupla violência — a social e a racial — que o obriga a vestir uma armadura que nunca encaixa totalmente.</p>
-      <p>Assim, o menino grande que precisa ser ninado é também um símbolo das feridas históricas que atravessam a construção da masculinidade negra no Brasil.</p>
-    </section>
-
-    <section>
-      <p>Por fim, a obra sugere que para existir outra masculinidade — uma masculina que possa acolher a vulnerabilidade e o afeto — é necessário desconstruir a rigidez dos papéis sociais e as marcas da história. A “canção para ninar” é uma metáfora para esse acalanto, essa possibilidade de reexistência para homens que carregam feridas e silêncios.</p>
-      <p>É um chamado para o fim da repetição do abandono e para o início da escuta, do cuidado e da reconstrução afetiva. O menino grande só poderá existir em plenitude se for ninado de verdade — não como um macho imbatível, mas como um ser humano inteiro.</p>
-      <p>Essa masculinidade, ao mesmo tempo frágil e poderosa, marcada e resistida, é o que Conceição Evaristo revela com beleza e coragem em sua obra.</p>
-    </section>
-
   </main>
-
-  <footer>
-    Um trabalho Ifsuldeminas.<br />
-    Todos os direitos reservados à Gustavo Tame.
-  </footer>
-
 </body>
 </html>
