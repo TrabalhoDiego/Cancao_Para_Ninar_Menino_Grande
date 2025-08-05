@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="favicon-32x32.png"/>
   <title>Masculinidade em Canção para Ninar Menino Grande</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
@@ -21,6 +20,12 @@
       align-items: center;
       padding: 2rem 1rem 5rem;
     }
+    .imagem-responsiva {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
     h1, h2 {
       font-family: 'Montserrat', sans-serif;
@@ -36,18 +41,10 @@
       margin-top: 2rem;
       text-align: center;
     }
+
     h2 {
       font-size: 1.9rem;
       margin-top: 3rem;
-    }
-
-    main {
-      max-width: 860px;
-      background: rgba(25, 18, 18, 0.85);
-      padding: 3rem 3.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 40px 3px rgba(255, 175, 50, 0.3);
-      overflow-wrap: break-word;
     }
 
     p {
@@ -63,18 +60,13 @@
       color: #f5d498;
     }
 
-    section {
-      border-left: 4px solid #e2b87c;
-      padding-left: 1.8rem;
-      margin-bottom: 2.8rem;
-    }
-
     footer {
       margin-top: 2rem;
       color: #7a6e61;
       font-size: 0.9rem;
       font-style: italic;
       user-select: none;
+      text-align: center;
     }
 
     h1:hover, h2:hover {
@@ -90,6 +82,7 @@
       border-left: 4px solid #f5d498;
       margin-bottom: 3rem;
       border-radius: 8px;
+      max-width: 860px;
     }
 
     .filosofia blockquote {
@@ -103,6 +96,7 @@
       flex-direction: column;
       gap: 1rem;
       margin-top: 2rem;
+      max-width: 860px;
     }
 
     details {
@@ -120,128 +114,183 @@
       color: #f5d498;
       margin-bottom: 0.5rem;
     }
-    footer{
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      body {
-        padding: 1.5rem 0.8rem 4rem;
-      }
-    
-      h1 {
-        font-size: 2rem;
-        margin-top: 1.5rem;
-      }
-    
-      h2 {
-        font-size: 1.4rem;
-        margin-top: 2rem;
-      }
-    
-      main {
-        padding: 2rem 1.2rem;
-      }
-    
-      p {
-        font-size: 1rem;
-        text-indent: 1.6rem;
-      }
-    
-      .filosofia {
-        padding: 1rem;
-      }
-    
-      .cards {
-        gap: 0.8rem;
-      }
-    
-      summary {
-        font-size: 1rem;
-      }
+
+    /* BOTÃO ABRIR JANELA */
+    .abrir-btn {
+      background: #e2b87c;
+      color: #1c1c1c;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 2rem auto;
+      display: block;
+      box-shadow: 0 0 8px #e2b87c88;
     }
 
+    .abrir-btn:hover {
+      background: #f8c06f;
+    }
+
+    /* JANELA FLUTUANTE */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .janela {
+      background: rgba(25, 18, 18, 0.95);
+      width: 90%;
+      height: 95%;
+      border-radius: 15px;
+      box-shadow: 0 0 40px 3px rgba(255, 175, 50, 0.3);
+      padding: 2.5rem;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .janela section {
+      border-left: 4px solid #e2b87c;
+      padding-left: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .fechar-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #444;
+      color: #f5d498;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .fechar-btn:hover {
+      background-color: #666;
+    }
   </style>
 </head>
 <body>
 
   <h1>A masculinidade em <br>Canção para ninar menino grande</h1>
 
-  <main>
-    <section>
-      <p><strong>Canção para Ninar Menino Grande</strong> é um livro curto, mas carregado de um peso imenso. Publicado por Conceição Evaristo, a obra não fala simplesmente de um homem, mas nos apresenta, através da voz de mulheres que o amaram, uma representação da masculinidade que se constrói em fraturas, em ausências e silêncios.</p>
-      <p>O protagonista, Fio Jasmim, não é um herói tradicional. Ele é um espelho onde se refletem as tensões de uma masculinidade que exige força e potência, mas que raramente pode sustentar a vulnerabilidade, o afeto e o cuidado. Sua figura é símbolo de um modelo social que aprisiona homens em papéis rígidos, numa máscara que desmorona diante do silêncio e da fragilidade.</p>
-      <p>Este site é um convite para adentrar essa representação — para entender a masculinidade que o livro retrata, não só em palavras, mas em sensações, em atmosferas, em pensamentos longos e imersivos.</p>
-    </section>
+  <audio id="musica-fundo" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio em HTML5.
+  </audio>
 
-    <section>
-      <p>A masculinidade em <em>Canção para Ninar Menino Grande</em> se revela como uma construção permeada pelo medo, pelo abandono e pela repetição de gestos que tentam ocultar uma fragilidade profunda. Fio Jasmim é apresentado como alguém que aprende a existir dentro de uma narrativa social que valoriza a dureza, o silêncio e a ausência de afeto, sobretudo no contexto da negritude brasileira. Ele se torna, por consequência, um personagem marcado pela desconexão afetiva — um “menino grande” que nunca recebeu o ninar, o cuidado e a acolhida que poderiam humanizá-lo para além da expectativa da virilidade.</p>
-      <p>Essa masculinidade, longe de ser natural, é um papel social imposto que gera danos tanto para quem o representa quanto para quem se relaciona com ele. O livro expõe as contradições entre o que se espera de um homem — forte, viril, controlador — e o que ele realmente é — um ser humano com necessidades emocionais que não pode manifestar sem ser condenado.</p>
-      <p>Assim, o “menino grande” não é um mero indivíduo, mas um arquétipo da masculinidade negra fragilizada, invisibilizada e silenciada.</p>
-    </section>
 
-    <section>
-      <p>Não se trata apenas da história de Fio, mas do efeito da masculinidade que ele encarna: a masculinidade como agente de dor e ausência. Sua fragilidade não é vista nem acolhida; seu silêncio não é questionado; sua solidão não tem nome. A masculinidade do livro é uma construção em ruínas — que ao mesmo tempo protege e condena, protege ao negar o afeto e condena ao afastar quem poderia lhe oferecer esse mesmo afeto.</p>
-      <p>É uma masculinidade que se sustenta pelo abandono, como se a única forma de existir fosse apagando partes de si, silenciando sentimentos e fugindo do cuidado. Isso torna impossível que Fio se torne um homem pleno — ele permanece suspenso, um menino grande que tenta ser adulto.</p>
-      <p>Essa tensão é o cerne da obra e o que Evaristo expõe com delicadeza brutal: a masculinidade tradicional é uma prisão que aprisiona e fere, e sua repetição perpetua ciclos de dor.</p>
-    </section>
+  <!-- Botão para abrir janela flutuante -->
+  <img src="image.jpg" class="imagem-responsiva" />
 
-    <section>
-      <p>A presença constante das mulheres, que narram e refletem sobre Fio, representa a resistência àquela masculinidade. São elas que dão voz à dor, à memória e à superação. Através dessas vozes, a masculinidade perde seu protagonismo único e absoluto — ela é vista de fora, sob o olhar daqueles que sofrem sua consequência, aqueles que experimentam suas lacunas e silenciam suas ausências.</p>
-      <p>Essa inversão de perspectiva mostra que a masculinidade é relacional, construída nas interações sociais e afetivas, e que sua análise só é possível quando se escuta a alteridade, especialmente a feminina, tão historicamente silenciada.</p>
-      <p>Não há aqui glorificação nem condenação simples, mas um convite para entender a masculinidade em sua complexidade dolorosa e necessária.</p>
-    </section>
+  <button class="abrir-btn" onclick="abrirJanela()">Ler Análise sobre a Masculinidade</button>
 
-    <section>
-      <p>Além do mais, o peso da negritude no personagem Fio é fundamental para compreender a masculinidade retratada. Ele vive sob o olhar de uma sociedade racista que exige dele uma masculinidade violenta, impenetrável, quase invencível. Essa imposição racializada agrava a impossibilidade do afeto e da fragilidade, tornando sua jornada ainda mais solitária e sofrida.</p>
-      <p>A masculinidade do homem negro, nessa obra, é vista como um campo onde se cruzam opressões de raça, gênero e classe, fazendo dela uma construção ainda mais frágil e complexa. É uma masculinidade que sofre dupla violência — a social e a racial — que o obriga a vestir uma armadura que nunca encaixa totalmente.</p>
-      <p>Assim, o menino grande que precisa ser ninado é também um símbolo das feridas históricas que atravessam a construção da masculinidade negra no Brasil.</p>
-    </section>
+  <!-- Janela flutuante -->
+  <div class="overlay" id="overlay">
+    <div class="janela">
+      <button class="fechar-btn" onclick="fecharJanela()">Fechar</button>
 
-    <section>
-      <p>Por fim, a obra sugere que para existir outra masculinidade — uma masculina que possa acolher a vulnerabilidade e o afeto — é necessário desconstruir a rigidez dos papéis sociais e as marcas da história. A “canção para ninar” é uma metáfora para esse acalanto, essa possibilidade de reexistência para homens que carregam feridas e silêncios.</p>
-      <p>É um chamado para o fim da repetição do abandono e para o início da escuta, do cuidado e da reconstrução afetiva. O menino grande só poderá existir em plenitude se for ninado de verdade — não como um macho imbatível, mas como um ser humano inteiro.</p>
-      <p>Essa masculinidade, ao mesmo tempo frágil e poderosa, marcada e resistida, é o que Conceição Evaristo revela com beleza e coragem em sua obra.</p>
-    </section>
+      <section>
+        <p><strong>Canção para Ninar Menino Grande</strong> é um livro curto, mas carregado de um peso imenso. Publicado por Conceição Evaristo, a obra não fala simplesmente de um homem, mas nos apresenta, através da voz de mulheres que o amaram, uma representação da masculinidade que se constrói em fraturas, em ausências e silêncios.</p>
+        <p>O protagonista, Fio Jasmim, não é um herói tradicional. Ele é um espelho onde se refletem as tensões de uma masculinidade que exige força e potência, mas que raramente pode sustentar a vulnerabilidade, o afeto e o cuidado. Sua figura é símbolo de um modelo social que aprisiona homens em papéis rígidos, numa máscara que desmorona diante do silêncio e da fragilidade.</p>
+        <p>Este site é um convite para adentrar essa representação — para entender a masculinidade que o livro retrata, não só em palavras, mas em sensações, em atmosferas, em pensamentos longos e imersivos.</p>
+      </section>
 
-    <!-- ADIÇÕES -->
-    <div class="filosofia">
-      <h2>Reflexão filosófica</h2>
-      <blockquote>
-        ""O homem nasceu livre, e por toda parte encontra-se acorrentado."<br> — Jean-Jacques Rousseau, O Contrato Social"
-      </blockquote>
-      <p>A célebre frase de Rousseau, embora escrita em contexto político, ilumina de forma aguda as prisões subjetivas que moldam a masculinidade em Canção para Ninar Menino Grande. Fio Jasmim, o protagonista, nasce com liberdade biológica, mas cresce acorrentado a papéis masculinos que sufocam sua autonomia afetiva. Sua identidade está tão presa à imagem do homem desejável, ausente, forte e emocionalmente impermeável que qualquer tentativa de conexão genuína soa como traição a esse ideal.<br>ㅤㅤFilosoficamente, Rousseau denuncia que a sociedade corrompe a liberdade natural do indivíduo. Fio representa esse homem domesticado por expectativas: ele foge das mulheres, mas é prisioneiro da ideia de que não deve se apegar; parece livre, mas não sabe lidar com o amor, com o cuidado, com o retorno. O que ele chama de liberdade é, na verdade, medo disfarçado de autonomia.<br>ㅤㅤSociologicamente, a masculinidade que ele encarna é construída sobre uma lógica de dominação que recusa a escuta e a responsabilização. Fio não é um sujeito livre, mas alguém preso a um roteiro de gênero que limita sua humanidade. Ele não se permite amar com profundidade porque isso exigiria reconhecer sua vulnerabilidade — algo que a masculinidade tóxica condena.<br>ㅤㅤLiterariamente, Conceição Evaristo dá voz às mulheres que revelam essas correntes invisíveis. Cada uma, com sua história, desmascara o mito do homem livre. Fio Jasmim vive em movimento, mas não evolui; parece decidir por si, mas age como quem repete um papel. Assim, a frase de Rousseau ganha nova camada: o protagonista não é livre, é acorrentado por dentro — não por grilhões, mas por ideias herdadas que o impedem de crescer como homem e como ser humano.</p>
+      <section>
+        <p>A masculinidade em <em>Canção para Ninar Menino Grande</em> se revela como uma construção permeada pelo medo, pelo abandono e pela repetição de gestos que tentam ocultar uma fragilidade profunda. Fio Jasmim é apresentado como alguém que aprende a existir dentro de uma narrativa social que valoriza a dureza, o silêncio e a ausência de afeto, sobretudo no contexto da negritude brasileira. Ele se torna, por consequência, um personagem marcado pela desconexão afetiva — um “menino grande” que nunca recebeu o ninar, o cuidado e a acolhida que poderiam humanizá-lo para além da expectativa da virilidade.</p>
+        <p>Essa masculinidade, longe de ser natural, é um papel social imposto que gera danos tanto para quem o representa quanto para quem se relaciona com ele. O livro expõe as contradições entre o que se espera de um homem — forte, viril, controlador — e o que ele realmente é — um ser humano com necessidades emocionais que não pode manifestar sem ser condenado.</p>
+        <p>Assim, o “menino grande” não é um mero indivíduo, mas um arquétipo da masculinidade negra fragilizada, invisibilizada e silenciada.</p>
+      </section>
+
+      <section>
+        <p>Não se trata apenas da história de Fio, mas do efeito da masculinidade que ele encarna: a masculinidade como agente de dor e ausência. Sua fragilidade não é vista nem acolhida; seu silêncio não é questionado; sua solidão não tem nome. A masculinidade do livro é uma construção em ruínas — que ao mesmo tempo protege e condena, protege ao negar o afeto e condena ao afastar quem poderia lhe oferecer esse mesmo afeto.</p>
+        <p>É uma masculinidade que se sustenta pelo abandono, como se a única forma de existir fosse apagando partes de si, silenciando sentimentos e fugindo do cuidado. Isso torna impossível que Fio se torne um homem pleno — ele permanece suspenso, um menino grande que tenta ser adulto.</p>
+        <p>Essa tensão é o cerne da obra e o que Evaristo expõe com delicadeza brutal: a masculinidade tradicional é uma prisão que aprisiona e fere, e sua repetição perpetua ciclos de dor.</p>
+      </section>
+
+      <section>
+        <p>A presença constante das mulheres, que narram e refletem sobre Fio, representa a resistência àquela masculinidade. São elas que dão voz à dor, à memória e à superação. Através dessas vozes, a masculinidade perde seu protagonismo único e absoluto — ela é vista de fora, sob o olhar daqueles que sofrem sua consequência, aqueles que experimentam suas lacunas e silenciam suas ausências.</p>
+        <p>Essa inversão de perspectiva mostra que a masculinidade é relacional, construída nas interações sociais e afetivas, e que sua análise só é possível quando se escuta a alteridade, especialmente a feminina, tão historicamente silenciada.</p>
+        <p>Não há aqui glorificação nem condenação simples, mas um convite para entender a masculinidade em sua complexidade dolorosa e necessária.</p>
+      </section>
+
+      <section>
+        <p>Além do mais, o peso da negritude no personagem Fio é fundamental para compreender a masculinidade retratada. Ele vive sob o olhar de uma sociedade racista que exige dele uma masculinidade violenta, impenetrável, quase invencível. Essa imposição racializada agrava a impossibilidade do afeto e da fragilidade, tornando sua jornada ainda mais solitária e sofrida.</p>
+        <p>A masculinidade do homem negro, nessa obra, é vista como um campo onde se cruzam opressões de raça, gênero e classe, fazendo dela uma construção ainda mais frágil e complexa. É uma masculinidade que sofre dupla violência — a social e a racial — que o obriga a vestir uma armadura que nunca encaixa totalmente.</p>
+        <p>Assim, o menino grande que precisa ser ninado é também um símbolo das feridas históricas que atravessam a construção da masculinidade negra no Brasil.</p>
+      </section>
+
+      <section>
+        <p>Por fim, a obra sugere que para existir outra masculinidade — uma masculina que possa acolher a vulnerabilidade e o afeto — é necessário desconstruir a rigidez dos papéis sociais e as marcas da história. A “canção para ninar” é uma metáfora para esse acalanto, essa possibilidade de reexistência para homens que carregam feridas e silêncios.</p>
+        <p>É um chamado para o fim da repetição do abandono e para o início da escuta, do cuidado e da reconstrução afetiva. O menino grande só poderá existir em plenitude se for ninado de verdade — não como um macho imbatível, mas como um ser humano inteiro.</p>
+        <p>Essa masculinidade, ao mesmo tempo frágil e poderosa, marcada e resistida, é o que Conceição Evaristo revela com beleza e coragem em sua obra.</p>
+      </section>
     </div>
+  </div>
 
-    <div class="cards">
-      <h2>As mulheres que cantam o menino grande</h2>
-      <details>
-        <summary>Pérola Maria</summary>
-        <p>Pérola representa o momento em que a masculinidade é chamada à responsabilidade. Ao contrário de outras mulheres na vida de Fio Jasmim, ela não o acolhe incondicionalmente, mas exige reciprocidade e maturidade. Seu olhar crítico desnuda a covardia emocional de um homem que se esconde atrás do afeto passivo. Pérola não destrói Fio — ela apenas se recusa a sustentá-lo sozinha. Sua presença revela que a masculinidade, quando não se sustenta por si, pesa sobre quem está por perto. Com Pérola, o autor mostra que o amor não é desculpa para a permanência do imaturo: ele é prova de que o afeto, quando é verdadeiro, também confronta.</p>
-      </details>
-      <details>
-        <summary>Juventina Maria Perpétua (Tina)</summary>
-        <p>Tina é o retrato da mulher que carrega o mundo nas costas enquanto espera que o homem que ama decida crescer. Ela é presença constante, conselheira, parceira — mas nunca plenamente reconhecida. Sua dedicação escancara a masculinidade que se acomoda, confunde cuidado com obrigação e amor com abrigo. Tina não é submissa; sua permanência é escolha, mas também denúncia: enquanto ela se doa, Fio permanece infantil. Quando ela começa a impor limites, rompe-se a ilusão de que o homem pode ser eternamente acolhido sem se responsabilizar. Tina é a mulher que, ao dizer “basta”, faz a masculinidade se ver sem muletas.</p>
-      </details>
-      <details>
-        <summary>Eleonora Distinta de Sá</summary>
-        <p>Eleonora encarna a idealização feminina construída pela memória masculina. Fio a vê como lembrança doce, símbolo da inocência que ele perdeu — mas essa visão é unilateral. Ela não reforça a masculinidade de Fio; ao contrário, mostra que ele a vê como extensão de si mesmo. Eleonora, no entanto, escolhe ir embora, frustrando essa expectativa. Sua recusa em se tornar o espelho confortável do protagonista é um gesto de autonomia e ruptura. Ao não ceder ao papel de refúgio emocional, ela desestabiliza uma masculinidade que depende da nostalgia e do controle da narrativa. Eleonora revela que o outro não existe para sustentar a identidade masculina.</p>
-      </details>
-      <details>
-        <summary>Outras vozes femininas</summary>
-        <p>As mulheres secundárias — vizinhas, professoras, atendentes — aparecem brevemente, mas têm impacto duradouro. Elas representam a coletividade que já não tolera a centralidade do homem fragilizado que insiste em ser o centro do mundo. Seus gestos, muitas vezes pequenos, desconstroem o privilégio silencioso da masculinidade. Elas não se comovem com a autopiedade de Fio. Ao se recusarem a sustentá-lo com elogios ou atenção, revelam uma masculinidade que só existe quando é reconhecida — e que, sem plateia, desmorona. São essas mulheres que apontam, mesmo sem palavras, que o homem precisa se reinventar ou aceitar sua própria irrelevância.</p>
-      </details>
-    </div>
-  </main>
+  <!-- Reflexão filosófica -->
+  <div class="filosofia">
+    <h2>Reflexão filosófica</h2>
+    <blockquote>
+      "O homem nasceu livre, e por toda parte encontra-se acorrentado."<br> — Jean-Jacques Rousseau, O Contrato Social
+    </blockquote>
+    <p>ㅤㅤA célebre frase de Rousseau, embora escrita em contexto político, ilumina de forma aguda as prisões subjetivas que moldam a masculinidade em Canção para Ninar Menino Grande. Fio Jasmim, o protagonista, nasce com liberdade biológica, mas cresce acorrentado a papéis masculinos que sufocam sua autonomia afetiva. Sua identidade está tão presa à imagem do homem desejável, ausente, forte e emocionalmente impermeável que qualquer tentativa de conexão genuína soa como traição a esse ideal.<br>ㅤㅤFilosoficamente, Rousseau denuncia que a sociedade corrompe a liberdade natural do indivíduo. Fio representa esse homem domesticado por expectativas: ele foge das mulheres, mas é prisioneiro da ideia de que não deve se apegar; parece livre, mas não sabe lidar com o amor, com o cuidado, com o retorno. O que ele chama de liberdade é, na verdade, medo disfarçado de autonomia.<br>ㅤㅤSociologicamente, a masculinidade que ele encarna é construída sobre uma lógica de dominação que recusa a escuta e a responsabilização. Fio não é um sujeito livre, mas alguém preso a um roteiro de gênero que limita sua humanidade. Ele não se permite amar com profundidade porque isso exigiria reconhecer sua vulnerabilidade — algo que a masculinidade tóxica condena.<br>ㅤㅤLiterariamente, Conceição Evaristo dá voz às mulheres que revelam essas correntes invisíveis. Cada uma, com sua história, desmascara o mito do homem livre. Fio Jasmim vive em movimento, mas não evolui; parece decidir por si, mas age como quem repete um papel. Assim, a frase de Rousseau ganha nova camada: o protagonista não é livre, é acorrentado por dentro — não por grilhões, mas por ideias herdadas que o impedem de crescer como homem e como ser humano</p>
+  </div>
+
+  <!-- Cards com mulheres -->
+  <div class="cards">
+    <h2>As mulheres que cantam o menino grande</h2>
+    <details>
+      <summary>Pérola Maria</summary>
+      <p>...</p>
+    </details>
+    <details>
+      <summary>Juventina Maria Perpétua (Tina)</summary>
+      <p>...</p>
+    </details>
+    <details>
+      <summary>Eleonora Distinta de Sá</summary>
+      <p>...</p>
+    </details>
+    <details>
+      <summary>Outras vozes femininas</summary>
+      <p>...</p>
+    </details>
+  </div>
 
   <footer>
-    Um trabalho IFsuldeminas.<br />
+    Um trabalho IFsuldeminas. 3ºTI 2025<br />
     Todos os direitos reservados à Gustavo Tame.
   </footer>
 
+  <script>
+    function abrirJanela() {
+      document.getElementById('overlay').style.display = 'flex';
+      const musica = document.getElementById("musica-fundo");
+      musica.play();
+    }
+
+    function fecharJanela() {
+      document.getElementById('overlay').style.display = 'none';
+      const musica = document.getElementById("musica-fundo");
+      musica.pause();
+      musica.currentTime = 0;
+    }
+  </script>
+
 </body>
 </html>
-
-
-
-
-
