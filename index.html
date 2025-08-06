@@ -174,20 +174,15 @@
     }
 
     .fechar-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      position: static;        /* Remove position absolute */
+      margin-top: auto;        /* Empurra para o fim do flex container */
+      align-self: center;      /* Centraliza horizontalmente */
       background-color: #444;
       color: #f5d498;
       border: none;
-      padding: 8px 16px;
+      padding: 8px 20px;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
-
-      align-self: center;
-      margin-top: auto; /* empurra o botão para o final */
-      padding: 8px 20px;
       font-weight: bold;
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
       transition: background-color 0.25s ease;
@@ -502,6 +497,7 @@
   </script>
 </body>
 </html>
+
 
 
 
