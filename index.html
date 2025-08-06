@@ -183,7 +183,80 @@
     .fechar-btn:hover {
       background-color: #666;
     }
-    
+
+    .texto-container {
+      position: relative;
+      max-width: 700px;
+      margin: 2rem auto;
+      width: 100%;
+    }
+
+    .texto-limitado {
+      max-height: 180px; /* Altura limitada */
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+    }
+
+    /* Degradê só com a classe limitado */
+    .texto-limitado.limitado::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4rem;
+      background: linear-gradient(to top, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Botão flutuando */
+    .texto-limitado.limitado + .ler-toggle-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .ler-toggle-btn {
+      /* Estado padrão do botão: estático */
+      position: static;
+      margin: 1rem auto 0 auto;
+      display: inline-flex;
+      justify-content: center;
+      width: auto;
+      cursor: pointer;
+      background-color: #e2b87c;
+      color: #1c1c1c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      opacity: 0.95;
+      box-shadow: 0 4px 10px rgba(226, 184, 124, 0.6);
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      user-select: none;
+    }
+
+    .ler-toggle-btn:hover {
+      background-color: #f8c06f;
+      opacity: 1;
+    }
+    /* Ícone de seta */
+    .ler-toggle-btn .seta {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* Quando expandido, a seta aponta para cima */
+    .ler-toggle-btn.expanded .seta {
+      transform: rotate(180deg);
+    }
+
+
     @media (max-width: 480px) {
     body {
       padding: 1rem 0.5rem 4rem;
@@ -314,7 +387,14 @@
     <blockquote>
       "O homem nasceu livre, e por toda parte encontra-se acorrentado."<br> — Jean-Jacques Rousseau, O Contrato Social
     </blockquote>
-    <p>ㅤㅤA célebre frase de Rousseau, embora escrita em contexto político, ilumina de forma aguda as prisões subjetivas que moldam a masculinidade em Canção para Ninar Menino Grande. Fio Jasmim, o protagonista, nasce com liberdade biológica, mas cresce acorrentado a papéis masculinos que sufocam sua autonomia afetiva. Sua identidade está tão presa à imagem do homem desejável, ausente, forte e emocionalmente impermeável que qualquer tentativa de conexão genuína soa como traição a esse ideal.<br>ㅤㅤFilosoficamente, Rousseau denuncia que a sociedade corrompe a liberdade natural do indivíduo. Fio representa esse homem domesticado por expectativas: ele foge das mulheres, mas é prisioneiro da ideia de que não deve se apegar; parece livre, mas não sabe lidar com o amor, com o cuidado, com o retorno. O que ele chama de liberdade é, na verdade, medo disfarçado de autonomia.<br>ㅤㅤSociologicamente, a masculinidade que ele encarna é construída sobre uma lógica de dominação que recusa a escuta e a responsabilização. Fio não é um sujeito livre, mas alguém preso a um roteiro de gênero que limita sua humanidade. Ele não se permite amar com profundidade porque isso exigiria reconhecer sua vulnerabilidade — algo que a masculinidade tóxica condena.<br>ㅤㅤLiterariamente, Conceição Evaristo dá voz às mulheres que revelam essas correntes invisíveis. Cada uma, com sua história, desmascara o mito do homem livre. Fio Jasmim vive em movimento, mas não evolui; parece decidir por si, mas age como quem repete um papel. Assim, a frase de Rousseau ganha nova camada: o protagonista não é livre, é acorrentado por dentro — não por grilhões, mas por ideias herdadas que o impedem de crescer como homem e como ser humano</p>
+    <div class="texto-container">
+      <div class="texto-limitado limitado" id="textoLimitado">
+        <p>ㅤㅤA célebre frase de Rousseau, embora escrita em contexto político, ilumina de forma aguda as prisões subjetivas que moldam a masculinidade em Canção para Ninar Menino Grande. Fio Jasmim, o protagonista, nasce com liberdade biológica, mas cresce acorrentado a papéis masculinos que sufocam sua autonomia afetiva. Sua identidade está tão presa à imagem do homem desejável, ausente, forte e emocionalmente impermeável que qualquer tentativa de conexão genuína soa como traição a esse ideal.<br>ㅤㅤFilosoficamente, Rousseau denuncia que a sociedade corrompe a liberdade natural do indivíduo. Fio representa esse homem domesticado por expectativas: ele foge das mulheres, mas é prisioneiro da ideia de que não deve se apegar; parece livre, mas não sabe lidar com o amor, com o cuidado, com o retorno. O que ele chama de liberdade é, na verdade, medo disfarçado de autonomia.<br>ㅤㅤSociologicamente, a masculinidade que ele encarna é construída sobre uma lógica de dominação que recusa a escuta e a responsabilização. Fio não é um sujeito livre, mas alguém preso a um roteiro de gênero que limita sua humanidade. Ele não se permite amar com profundidade porque isso exigiria reconhecer sua vulnerabilidade — algo que a masculinidade tóxica condena.<br>ㅤㅤLiterariamente, Conceição Evaristo dá voz às mulheres que revelam essas correntes invisíveis. Cada uma, com sua história, desmascara o mito do homem livre. Fio Jasmim vive em movimento, mas não evolui; parece decidir por si, mas age como quem repete um papel. Assim, a frase de Rousseau ganha nova camada: o protagonista não é livre, é acorrentado por dentro — não por grilhões, mas por ideias herdadas que o impedem de crescer como homem e como ser humano</p>
+      </div>
+      <button class="ler-toggle-btn" onclick="toggleTexto()" id="btnToggle">
+        Ler mais <span class="seta">&#x25BC;</span>
+      </button>
+    </div>
   </div>
 
   <!-- Cards com mulheres -->
@@ -356,7 +436,36 @@
       musica.pause();
       musica.currentTime = 0;
     }
-  </script>
 
+    function mostrarTexto() {
+      const texto = document.getElementById("textoLimitado");
+      texto.style.maxHeight = "none";
+      texto.style.overflow = "visible";
+
+      texto.classList.remove("limitado");  // Remove o degradê
+
+      const btn = document.querySelector(".ler-mais-btn");
+      btn.style.display = "none";
+    }
+
+    function toggleTexto() {
+      const texto = document.getElementById("textoLimitado");
+      const btn = document.getElementById("btnToggle");
+
+      if (texto.classList.contains("limitado")) {
+        // Expandir texto
+        texto.style.maxHeight = "none";
+        texto.style.overflow = "visible";
+        texto.classList.remove("limitado");  // Remove degradê
+        btn.textContent = "Ler menos";
+      } else {
+        // Recolher texto
+        texto.style.maxHeight = "180px";
+        texto.style.overflow = "hidden";
+        texto.classList.add("limitado");     // Aplica degradê
+        btn.textContent = "Ler mais";
+      }
+    }
+  </script>
 </body>
 </html>
