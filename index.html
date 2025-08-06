@@ -277,19 +277,25 @@
 
 
     @media (max-width: 480px) {
-      .texto-container {
-        overflow-x: hidden; /* evita scroll horizontal */
-        width: 100%;
+      body, html {
+        overflow-x: hidden !important;
       }
-      
+    
+      .texto-container {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+      }
+    
       #textoLimitado {
         width: 100%;
+        max-width: 100%;
         word-wrap: break-word;
         word-break: break-word;
         box-sizing: border-box;
-      }
-      body {
-        padding: 1rem 0.5rem 4rem;
       }
 
       h1 {
@@ -498,5 +504,6 @@
   </script>
 </body>
 </html>
+
 
 
