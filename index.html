@@ -277,25 +277,24 @@
 
 
     @media (max-width: 480px) {
-      body, html {
-        overflow-x: hidden !important;
+      .overlay {
+        overflow-x: hidden;
       }
     
-      .texto-container {
-        overflow-x: hidden !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        padding-left: 1rem;
-        padding-right: 1rem;
+      .janela {
+        width: 95vw !important;  /* largura máxima da janela */
+        max-width: 95vw !important;
+        height: 90vh !important;  /* ajuste altura para caber na tela */
+        padding: 1.2rem 1rem !important;
         box-sizing: border-box;
+        overflow-x: hidden;       /* bloqueia scroll horizontal */
       }
     
-      #textoLimitado {
+      .janela section {
         width: 100%;
-        max-width: 100%;
-        word-wrap: break-word;
-        word-break: break-word;
         box-sizing: border-box;
+        overflow-wrap: break-word; /* quebra palavras grandes */
+        word-break: break-word;
       }
 
       h1 {
@@ -504,6 +503,7 @@
   </script>
 </body>
 </html>
+
 
 
 
