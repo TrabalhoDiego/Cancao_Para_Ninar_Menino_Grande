@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="favicon-32x32.png">
   <title>Masculinidade em Canção para Ninar Menino Grande</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
@@ -159,12 +158,18 @@
       padding: 2.5rem;
       overflow-y: auto;
       position: relative;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
     }
 
     .janela section {
       border-left: 4px solid #e2b87c;
       padding-left: 1.8rem;
       margin-bottom: 2.8rem;
+      flex-shrink: 0;
     }
 
     .fechar-btn {
@@ -178,6 +183,13 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+
+      align-self: center;
+      margin-top: auto; /* empurra o botão para o final */
+      padding: 8px 20px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      transition: background-color 0.25s ease;
     }
 
     .fechar-btn:hover {
@@ -237,6 +249,11 @@
       box-shadow: 0 4px 10px rgba(226, 184, 124, 0.6);
       transition: background-color 0.3s ease, opacity 0.3s ease;
       user-select: none;
+
+      padding: 6px 14px;   /* Menor padding */
+      border-radius: 20px;
+      font-size: 0.85rem;  /* Fonte menor */
+      box-shadow: 0 3px 8px rgba(226, 184, 124, 0.6);
     }
 
     .ler-toggle-btn:hover {
@@ -249,6 +266,7 @@
       transition: transform 0.3s ease;
       font-size: 1.2rem;
       line-height: 1;
+      font-size: 1rem;
     }
 
     /* Quando expandido, a seta aponta para cima */
