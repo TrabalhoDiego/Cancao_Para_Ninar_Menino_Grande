@@ -277,69 +277,79 @@
 
 
     @media (max-width: 480px) {
-    body {
-      padding: 1rem 0.5rem 4rem;
-    }
+      .texto-container {
+        overflow-x: hidden; /* evita scroll horizontal */
+        width: 100%;
+      }
+      
+      #textoLimitado {
+        width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 1rem 0.5rem 4rem;
+      }
 
-    h1 {
-      font-size: 1.6rem;
-      margin-top: 1.2rem;
+      h1 {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+      }
+  
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+      }
+  
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-indent: 1rem;
+      }
+  
+      .filosofia, .cards, .janela section {
+        width: 100%;
+        padding: 1rem 0.8rem;
+      }
+  
+      .abrir-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        width: 90%;
+      }
+  
+      .imagem-responsiva {
+        width: 100%;
+        margin-bottom: 1.2rem;
+      }
+  
+      .janela {
+        width: 95%;
+        height: 90%;
+        padding: 1.2rem 1rem;
+      }
+  
+      .fechar-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+  
+      summary {
+        font-size: 1rem;
+      }
+  
+      details {
+        padding: 0.8rem;
+      }
+  
+      footer {
+        font-size: 0.75rem;
+        padding: 0 0.5rem;
+      }
     }
-
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      text-indent: 1rem;
-    }
-
-    .filosofia, .cards, .janela section {
-      width: 100%;
-      padding: 1rem 0.8rem;
-    }
-
-    .abrir-btn {
-      padding: 10px 16px;
-      font-size: 0.9rem;
-      width: 90%;
-    }
-
-    .imagem-responsiva {
-      width: 100%;
-      margin-bottom: 1.2rem;
-    }
-
-    .janela {
-      width: 95%;
-      height: 90%;
-      padding: 1.2rem 1rem;
-    }
-
-    .fechar-btn {
-      top: 10px;
-      right: 10px;
-      padding: 6px 12px;
-      font-size: 0.85rem;
-    }
-
-    summary {
-      font-size: 1rem;
-    }
-
-    details {
-      padding: 0.8rem;
-    }
-
-    footer {
-      font-size: 0.75rem;
-      padding: 0 0.5rem;
-    }
-  }
-
   </style>
 </head>
 <body>
@@ -488,4 +498,5 @@
   </script>
 </body>
 </html>
+
 
